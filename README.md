@@ -1,91 +1,102 @@
-# EcoWatt — Gestión y Desempeño Energético
+# Gestión y Desempeño Energético
 
-> **EcoFest Barranquilla 2026 · EcoHackathon**  
-> **Participantes:**  
-> - Jose Mauricio Lopez Robles  
-> - Daniel Granados  
+Aplicación web para que una empresa haga su **caracterización y diagnóstico energético** sin conocimientos avanzados: registra o importa sus datos mensuales (consumo, producción y, si lo tiene, presupuesto) y obtiene línea base, línea meta, indicadores base 100, CUSUM, seguimiento presupuestal ajustado por producción, huella de carbono y ecológica, oportunidades de mejora y un informe técnico reproducible. Varias empresas pueden compararse en un **tablero** (qué % de su meta consumió cada una y en qué zona quedó) y en **rankings** (por ahorro demostrado y por factor de emisión).
 
-Plataforma web de **gestión y caracterización energética industrial** que transforma datos mensuales de consumo y producción en información predictiva, cuantitativa y accionable, alineada con los estándares internacionales **ISO 50001 e ISO 50006**.
+Desarrollada para el reto propuesto por la Cámara de Comercio de Barranquilla.
 
-🌐 **Despliegue en vivo en GitHub Pages:** [https://josejjf123.github.io/ecowatt/](https://josejjf123.github.io/ecowatt/)
+## Cómo ejecutarla
 
----
+**Opción 1 — sin instalar nada:** abra `index.html` con doble clic (Chrome, Edge, Firefox o Safari recientes). Funciona sin conexión a internet.
 
-## 🎯 Propósito del Proyecto
+**Opción 2 — servidor local** (requiere Node.js 18+):
 
-En el entorno industrial moderno, las organizaciones enfrentan el desafío de optimizar su consumo de recursos y mitigar su huella de carbono. Sin embargo, evaluar el consumo bruto sin normalizarlo frente a la producción real genera diagnósticos erróneos.
-
-**EcoWatt** resuelve esta problemática implementando un motor analítico riguroso y transparente que permite:
-1. Modelar la **Línea Base Energética (LB)** mediante regresión lineal por mínimos cuadrados ($E = m \cdot P + E_0$), validando estadísticamente $R^2$, el $p$-valor de la pendiente (test $t$), error estándar ($S_{yx}$) e independizando el consumo no asociado a la producción (carga base fija $E_0$).
-2. Determinar la **Línea Meta (LM)** identificando los meses de mayor eficiencia histórica para cuantificar el potencial real de ahorro.
-3. Monitorear el desempeño en tiempo real con **Indicadores en Base 100** y control estadístico **CUSUM** (Sumas Acumuladas) para detectar tempranamente desviaciones anómalas o ahorros persistentes.
-4. Evaluar el cumplimiento con **Presupuesto Flexible**, ajustando el consumo presupuestado según el nivel real de producción.
-5. Calcular la **Huella de Carbono** (t CO₂e) y la **Huella Ecológica** (ha) asociadas al consumo y los ahorros obtenidos.
-6. Generar **Informes Técnicos Autónomos (HTML/PDF)** y exportar a **Excel (.xlsx)** con fórmulas nativas de auditoría.
-
----
-
-## 🚀 Características Principales
-
-* **Cero dependencias pesadas en el cliente:** Diseñado en JavaScript moderno y CSS puro; carga instantánea y funcionamiento offline garantizado.
-* **Motor de Unidades Consistente:** Conversión automática entre magnitudes de energía (`kWh`, `MWh`, `GJ`, etc.), volúmenes de gas (`m³`, `kpc`), vapor, combustibles y métricas de producción (`L`, `hL`, `t`, `kg`, cajas, unidades).
-* **Importador Universal:** Compatible con archivos Excel (`.xlsx`, `.xlsm`), archivos `.csv` y pegado tabular directo desde el portapapeles.
-* **Casos de Demostración Industriales:** Incluye escenarios de prueba reproducibles (17, 24 y 36 meses con periodos de línea base y seguimiento).
-* **Diseño Profesional y Accesible:** Interfaz adaptable con soporte para modo claro y modo oscuro, gráficos vectoriales SVG interactivos y tooltips contextuales.
-
----
-
-## 📁 Estructura del Proyecto
-
-```text
-├── index.html                   # Punto de entrada de la aplicación web
-├── assets/
-│   └── css/
-│       └── styles.css           # Sistema de diseño, temas claro/oscuro y componentes
-├── src/
-│   ├── core/                    # Motor matemático y estadístico
-│   │   ├── stats.js             # Mínimos cuadrados, test t, residuos, Durbin-Watson
-│   │   ├── units.js             # Dimensiones físicas y factores de conversión
-│   │   ├── format.js            # Formateo numérico y de fechas
-│   │   ├── dataset.js           # Esquema de datos y validaciones
-│   │   └── analysis.js          # Motor central de caracterización energética
-│   ├── data/
-│   │   └── demo.js              # Datos de demostración reproducibles
-│   ├── io/                      # Importación y exportación de archivos
-│   │   ├── csv.js               # Parser y serializador de CSV
-│   │   ├── xlsx.js              # Lector y generador de libros Excel
-│   │   ├── importer.js          # Asistente de importación con mapeo de columnas
-│   │   ├── exporter.js          # Exportador de resultados y fórmulas
-│   │   └── report.js            # Generador de informes técnicos en HTML/PDF
-│   └── ui/
-│       ├── charts.js            # Motor de gráficos SVG vectoriales
-│       ├── views.js             # Generador de vistas analíticas y KPIs
-│       └── app.js               # Controlador principal y gestión de estado
-└── .github/
-    └── workflows/
-        └── deploy.yml           # Despliegue continuo automático a GitHub Pages
+```bash
+node serve.js
 ```
 
----
+y abra http://localhost:8080.
 
-## 🛠️ Ejecución Local
+**Enlaces de demostración** (con el servidor local): `?demo=24&paso=3` (24 meses con presupuesto) · `?demo=36&paso=3` (base + seguimiento) · `?demo=multi&paso=5` (4 empresas en el tablero).
 
-Dado que la aplicación está construida sobre estándares web puros, no requiere pasos de compilación complejos:
+**Pruebas automáticas:**
 
-1. Clonar el repositorio:
-   ```bash
-   git clone https://github.com/Josejjf123/ecowatt.git
-   cd ecowatt
-   ```
-2. Abrir directamente `index.html` en cualquier navegador web moderno, o servirlo con un servidor local estático:
-   ```bash
-   node serve.js 8080
-   # o en Python:
-   python -m http.server 8080
-   ```
+```bash
+npm test
+```
 
----
+## Uso
 
-## 📄 Licencia
+Por empresa (selector «Empresa activa» y botón **＋ Empresa** en la barra superior):
 
-Este proyecto está bajo la Licencia MIT.
+1. **Empresa y unidades** — identificación, energético, unidades y factores ambientales (por defecto los del Excel: emisión 0,4341667 t CO₂/kWh; huella 0,000383 ha/t CO₂; editables).
+2. **Datos reales y presupuesto** — una sola tabla: mes, consumo y producción reales (obligatorios) y presupuestados (opcionales). Sin límite de meses. Se puede agregar, editar, eliminar, importar CSV/Excel o pegar desde Excel. La validación aparece debajo de la tabla, en vivo.
+3. **Resultados** — Resumen, Descriptiva e IC, Línea base, Línea meta, Indicadores base 100, Seguimiento, Presupuesto, Huella ecológica, Oportunidades, Calidad de datos y Metodología.
+4. **Exportar** — informe técnico (HTML imprimible a PDF), Excel con fórmulas de verificación, CSV y proyecto (.json).
+
+Entre empresas:
+
+5. **Tablero comparativo** — % de la meta consumido y zona (verde, amarilla, roja), ahorro, presupuesto consumido y huella de cada empresa, con gráficas comparativas.
+6. **Ranking** — por ahorro demostrado y por factor de emisión; descargable en CSV.
+
+## Estructura
+
+```
+index.html                 Página principal
+assets/css/styles.css      Estilos (claro/oscuro, adaptable a móviles)
+src/core/                  Lógica de cálculo, independiente de la interfaz
+  stats.js                 Estadística: regresión, distribuciones t y F
+  units.js                 Unidades y conversiones
+  dataset.js               Meses, números, validación, factores por defecto
+  analysis.js              Motor de análisis por empresa
+  benchmark.js             Tablero y rankings entre empresas
+  format.js                Formato numérico es-CO
+src/io/                    CSV, Excel (.xlsx, lectura y escritura), importador, informe, exportación
+src/ui/                    Gráficos SVG, vistas de resultados, tablero y controlador
+src/data/demo.js           Datos de demostración (ficticios, reproducibles)
+data/                      Archivos de ejemplo (CSV y Excel)
+tests/                     Pruebas automáticas (node:test)
+docs/METODOLOGIA.md        Fórmulas y decisiones metodológicas
+docs/VALIDACION.md         Pruebas, valores de referencia y prueba integral
+tools/generar_ejemplos.js  Regenera los archivos de /data
+serve.js                   Servidor estático opcional
+```
+
+**Bibliotecas externas:** ninguna. Los gráficos, la lectura/escritura de Excel y la estadística están implementados en el proyecto. Para leer `.xlsx` se usa `DecompressionStream`, disponible en navegadores actuales.
+
+## Datos de ejemplo
+
+- `data/ejemplo_17_meses.csv` — 17 meses (estructura del estudio de referencia).
+- `data/ejemplo_24_meses_con_presupuesto.csv` y `.xlsx` — 24 meses con presupuesto.
+- `data/ejemplo_36_meses_base_y_seguimiento.csv` — 24 meses base + 12 de seguimiento, con un mes faltante.
+
+Todos son **ficticios** (generados con semilla fija); no corresponden a ninguna empresa real.
+
+## Persistencia
+
+Los datos se guardan automáticamente en el **almacenamiento local del navegador** (`localStorage`): solo en ese equipo y ese navegador, sin servidor. **No es una base de datos empresarial centralizada.** Si se borran los datos del navegador se pierden. Use «Guardar» (todas las empresas) o «Exportar → Proyecto» para conservar una copia en archivo `.json` y «Abrir» para recuperarla.
+
+## Limitaciones conocidas
+
+- La línea base es lineal y de una sola variable (producción). Si el consumo depende también del clima, la mezcla de productos u otras variables, el modelo puede quedarse corto.
+- Los p-values e intervalos suponen residuos independientes y con varianza constante; con autocorrelación o pocos datos pueden ser optimistas.
+- La línea meta se construye seleccionando meses según su consumo: sus estadísticos son descriptivos.
+- El tablero sin periodo de seguimiento evalúa los últimos 12 meses, que también construyeron la línea base: el resultado es indicativo.
+- Comparar empresas con periodos evaluados distintos (por ejemplo 2023 frente a 2024) se informa, pero no se corrige.
+- **Unidad del factor de emisión:** 0,4341667 está en el orden de los factores de red expresados por **MWh** (o en kg CO₂/kWh). Con «t CO₂/kWh», la huella de carbono resulta 1000 veces mayor. Verifique la unidad en el Excel y ajústela en «Empresa y unidades».
+- Las oportunidades son estimaciones; un ahorro solo se considera verificado con un plan de medición y verificación revisado.
+- No se leen archivos `.xls` antiguos (guardar como `.xlsx` o CSV).
+- La aplicación no certifica cumplimiento de ninguna norma (ISO 50001/50006 u otras) ni sustituye una auditoría energética.
+- La comparación con el Excel del estudio original está pendiente (ver `docs/VALIDACION.md`).
+
+## Cambios respecto a la versión anterior
+
+En la carpeta del proyecto no había una versión anterior de la aplicación ni el Excel de referencia, así que esta versión se construyó desde cero a partir de los requisitos. Cubre:
+
+- Número de meses flexible (12, 17, 24, 36 o más), distinguiendo meses introducidos y observaciones usadas en cada cálculo.
+- Importación CSV, Excel y texto pegado, con detección de columnas, unidades y separador decimal.
+- Validación de duplicados, valores imposibles, incompletos, unidades incompatibles y meses faltantes, sin imputar ni reemplazar por cero.
+- Presupuesto opcional en la misma tabla, analizado como serie independiente, con desviación ajustada por producción y explicación automática por mes.
+- Línea base con diagnóstico estadístico completo, línea meta, indicadores base 100, CUSUM y ahorro medido con intervalo de confianza.
+- Huella de carbono y huella ecológica con los factores del Excel por defecto.
+- Varias empresas, tablero comparativo (% de la meta y zona) y rankings por ahorro y por factor de emisión.
+- Informe técnico reproducible, Excel con fórmulas de verificación y pruebas automáticas.

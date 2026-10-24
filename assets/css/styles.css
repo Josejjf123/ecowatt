@@ -109,6 +109,7 @@ table.edit input, table.edit select { padding: 5px 7px; border-color: transparen
 table.edit input:hover, table.edit select:hover { border-color: var(--line); }
 table.edit input:focus, table.edit select:focus { border-color: var(--focus); background: var(--surface); }
 table.edit input.num { text-align: right; font-variant-numeric: tabular-nums; }
+table.edit select[data-f="period"] { min-width: 128px; }
 table.edit tr.st-invalid td, table.edit tr.st-duplicate td { background: var(--bad-bg); }
 table.edit tr.st-incomplete td { background: var(--warn-bg); }
 table.edit tr.st-excluded td { opacity: .6; }

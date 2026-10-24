@@ -1,14 +1,20 @@
-# Gestión y Desempeño Energético HACKATHON ECOFEST BARRANQUILLA 2026
-JOSE MAURICIO LOPEZ ROBLES
-DANIEL GRANADOS
+# EcoWatt — Gestión y Desempeño Energético
+
+> **EcoFest Barranquilla 2026 · EcoHackathon** — Reto propuesto por la Cámara de Comercio de Barranquilla  
+> **Participantes:**  
+> - Jose Mauricio Lopez Robles  
+> - Daniel Granados  
+
+🌐 **Despliegue en GitHub Pages:** [https://josejjf123.github.io/ecowatt/](https://josejjf123.github.io/ecowatt/)  
+💡 **Landing Explicativa:** [https://josejjf123.github.io/ecowatt/landing.html](https://josejjf123.github.io/ecowatt/landing.html)  
 
 Aplicación web para que una empresa haga su **caracterización y diagnóstico energético** sin conocimientos avanzados: registra o importa sus datos mensuales (consumo, producción y, si lo tiene, presupuesto) y obtiene línea base, línea meta, indicadores base 100, CUSUM, seguimiento presupuestal ajustado por producción, huella de carbono y ecológica, oportunidades de mejora y un informe técnico reproducible. Varias empresas pueden compararse en un **tablero** (qué % de su meta consumió cada una y en qué zona quedó) y en **rankings** (por ahorro demostrado y por factor de emisión).
 
-Desarrollada para el reto propuesto por la Cámara de Comercio de Barranquilla.
+La metodología usa los conceptos de ISO 50001/50006 (línea base energética, indicadores de desempeño, seguimiento). La aplicación no constituye certificación ni declaración de cumplimiento de esas normas.
 
 ## Cómo ejecutarla
 
-**Opción 1 — sin instalar nada:** abra `index.html` con doble clic (Chrome, Edge, Firefox o Safari recientes). Funciona sin conexión a internet.
+**Opción 1 — sin instalar nada:** clone el repositorio (`git clone https://github.com/Josejjf123/ecowatt.git`) o descargue la carpeta y abra `index.html` con doble clic (Chrome, Edge, Firefox o Safari recientes). Funciona sin conexión a internet.
 
 **Opción 2 — servidor local** (requiere Node.js 18+):
 
@@ -102,3 +108,7 @@ En la carpeta del proyecto no había una versión anterior de la aplicación ni 
 - Huella de carbono y huella ecológica con los factores del Excel por defecto.
 - Varias empresas, tablero comparativo (% de la meta y zona) y rankings por ahorro y por factor de emisión.
 - Informe técnico reproducible, Excel con fórmulas de verificación y pruebas automáticas.
+
+## Licencia
+
+Este proyecto está bajo la Licencia MIT (ver `LICENSE`).

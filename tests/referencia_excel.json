@@ -1,0 +1,19 @@
+{
+  "_instrucciones": "Copie aquí los datos y resultados del Excel de referencia (estudio Postobón) para que la prueba 'excel.test.js' compare automáticamente la aplicación con el Excel. Mientras 'observaciones' esté vacío, la prueba se omite. Use punto decimal. 'tolerancia_relativa' es la diferencia máxima aceptada (1e-6 = 0,0001 %).",
+  "unidad_energia": "kWh",
+  "unidad_produccion": "L",
+  "observaciones": [],
+  "_ejemplo_observaciones": [["2023-01", 484455, 8172100], ["2023-02", 474504, 8348700]],
+  "resultados_excel": {
+    "pendiente_linea_base": null,
+    "intercepto_linea_base": null,
+    "r2_linea_base": null,
+    "error_tipico_linea_base": null,
+    "n_puntos_linea_meta": null,
+    "pendiente_linea_meta": null,
+    "intercepto_linea_meta": null,
+    "r2_linea_meta": null,
+    "ic_promedio": null
+  },
+  "tolerancia_relativa": 1e-6
+}

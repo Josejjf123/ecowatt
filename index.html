@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestión y Desempeño Energético</title>
+  <meta name="description"
+    content="Caracterización energética, línea base, línea meta, indicadores base 100 y seguimiento presupuestal para empresas.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f6b5c'/%3E%3Cpath d='M18 4 8 18h7l-2 10 11-15h-7z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24">
+            <path d="M13.5 2 5 13.5h5.5L9 22l9.5-12.5H13z" fill="#fff" />
+          </svg></div>
+        <div class="brand-text">
+          <div class="brand-title">Gestión y Desempeño Energético</div>
+          <div class="brand-sub">Caracterización · Línea base · Línea meta · Presupuesto</div>
+        </div>
+      </div>
+      <div class="top-actions">
+        <span class="save-state" id="save-state" aria-live="polite"></span>
+        <button class="btn btn-sm" id="btn-open" title="Abrir empresas guardadas (.json)"><span
+            aria-hidden="true">📂</span><span class="lbl">Abrir</span></button>
+        <button class="btn btn-sm" id="btn-save" title="Descargar todas las empresas como archivo (.json)"><span
+            aria-hidden="true">💾</span><span class="lbl">Guardar</span></button>
+        <button class="btn btn-sm btn-ghost" id="btn-theme" title="Cambiar tema claro/oscuro"
+          aria-label="Cambiar tema">◐</button>
+        <input type="file" id="file-project" accept=".json,application/json" hidden>
+      </div>
+    </div>
+    <div class="companybar">
+      <label for="company-select">Empresa activa</label>
+      <select id="company-select"></select>
+      <button class="btn btn-sm" id="btn-add-company" title="Agregar otra empresa para comparar">＋ Empresa</button>
+      <button class="btn btn-sm btn-ghost btn-danger" id="btn-del-company" title="Eliminar la empresa activa">Eliminar
+        empresa</button>
+      <span class="muted" id="company-count"></span>
+    </div>
+    <nav class="stepper" id="stepper" aria-label="Pasos del análisis"></nav>
+  </header>
+
+  <main id="view" tabindex="-1"></main>
+
+  <p class="storage-note" id="storage-note">Los datos se guardan automáticamente solo en este navegador (almacenamiento
+    local). No es una base de datos empresarial: si borra los datos del navegador o cambia de equipo se perderán. Use
+    «Guardar» para conservar una copia en archivo (incluye todas las empresas).</p>
+
+  <dialog id="dlg-import" aria-labelledby="dlg-import-title"></dialog>
+  <div id="tooltip" role="tooltip"></div>
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- Lógica de cálculo (independiente de la interfaz) -->
+  <script src="src/core/stats.js"></script>
+  <script src="src/core/units.js"></script>
+  <script src="src/core/format.js"></script>
+  <script src="src/core/dataset.js"></script>
+  <script src="src/core/analysis.js"></script>
+  <script src="src/core/benchmark.js"></script>
+  <!-- Entrada / salida -->
+  <script src="src/io/csv.js"></script>
+  <script src="src/io/xlsx.js"></script>
+  <script src="src/io/importer.js"></script>
+  <!-- Presentación -->
+  <script src="src/ui/charts.js"></script>
+  <script src="src/ui/views.js"></script>
+  <script src="src/ui/benchmark-views.js"></script>
+  <script src="src/io/report.js"></script>
+  <script src="src/io/exporter.js"></script>
+  <script src="src/data/demo.js"></script>
+  <script src="src/ui/app.js"></script>
+</body>
+
+</html>

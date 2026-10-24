@@ -1,4 +1,6 @@
-# Gestión y Desempeño Energético
+# Gestión y Desempeño Energético HACKATHON ECOFEST BARRANQUILLA 2026
+JOSE MAURICIO LOPEZ ROBLES
+DANIEL GRANADOS
 
 Aplicación web para que una empresa haga su **caracterización y diagnóstico energético** sin conocimientos avanzados: registra o importa sus datos mensuales (consumo, producción y, si lo tiene, presupuesto) y obtiene línea base, línea meta, indicadores base 100, CUSUM, seguimiento presupuestal ajustado por producción, huella de carbono y ecológica, oportunidades de mejora y un informe técnico reproducible. Varias empresas pueden compararse en un **tablero** (qué % de su meta consumió cada una y en qué zona quedó) y en **rankings** (por ahorro demostrado y por factor de emisión).
 

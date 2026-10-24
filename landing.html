@@ -1,0 +1,973 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoWatt · Plataforma Inteligente de Desempeño y Gestión Energética</title>
+  <meta name="description"
+    content="Diagnóstico energético corporativo, línea base ISO 50001, metas de ahorro ajustadas a producción, huella de carbono y benchmarking multiempresa. 100% privado en tu navegador.">
+  <meta name="theme-color" content="#0f6b5c">
+  
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f6b5c'/%3E%3Cpath d='M18 4 8 18h7l-2 10 11-15h-7z' fill='%23fff'/%3E%3C/svg%3E">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Landing Styles -->
+  <link rel="stylesheet" href="assets/css/landing.css">
+</head>
+
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header" id="top">
+    <div class="container nav-container">
+      <a href="#top" class="brand-link" aria-label="EcoWatt Inicio">
+        <div class="brand-logo-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M13 2 4.5 13.5h6L9.5 22 20 10.5h-6z" fill="currentColor" fill-opacity="0.2"/>
+            <path d="M13 2 4.5 13.5h6L9.5 22 20 10.5h-6z" />
+          </svg>
+        </div>
+        <div class="brand-info">
+          <div class="brand-title">
+            EcoWatt
+            <span class="brand-badge">v2.0</span>
+          </div>
+          <span class="brand-tagline">Gestión &amp; Desempeño Energético</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav aria-label="Navegación principal">
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-item"><a href="#que-es">¿Qué es?</a></li>
+          <li class="nav-item"><a href="#como-funciona">Cómo Funciona</a></li>
+          <li class="nav-item"><a href="#modulos">Módulos</a></li>
+          <li class="nav-item"><a href="#privacidad">Privacidad</a></li>
+          <li class="nav-item"><a href="#demos">Demostraciones</a></li>
+          <li class="nav-item"><a href="#faq">Metodología</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" title="Cambiar tema claro / oscuro" aria-label="Cambiar tema">
+          <!-- Sun SVG -->
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
+            <circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <!-- Moon SVG -->
+          <svg class="moon-icon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
+          </svg>
+        </button>
+
+        <a href="index.html" class="btn btn-primary" id="btn-open-app">
+          <span>Abrir Plataforma</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+          </svg>
+        </a>
+
+        <!-- Mobile hamburger -->
+        <button class="nav-mobile-toggle" id="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main>
+    <section class="section hero-section" id="hero">
+      <div class="container hero-grid">
+        <!-- Left: Pitch & CTAs -->
+        <div class="hero-content">
+          <div class="hero-pill">
+            <span class="hero-pill-dot" aria-hidden="true"></span>
+            <span>EcoFest Barranquilla 2026 · Cámara de Comercio</span>
+          </div>
+
+          <h1 class="hero-title">
+            Gestión Energética Inteligente, Rigurosa y <span class="hero-title-highlight">100% Privada</span>
+          </h1>
+
+          <p class="hero-desc">
+            Automatiza tu diagnóstico energético empresarial, calcula tu línea base bajo conceptos ISO 50001, proyecta metas de ahorro ajustadas a producción y audita tu huella de carbono — <strong>directamente en tu navegador, sin servidores ni suscripciones</strong>.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="index.html" class="btn btn-primary btn-lg" id="hero-cta-start">
+              <span>Iniciar Diagnóstico Gratis</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>
+              </svg>
+            </a>
+
+            <a href="index.html?demo=24&paso=3" class="btn btn-secondary btn-lg" id="hero-cta-demo">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--brand)">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              <span>Ver Demo con Datos (24 Meses)</span>
+            </a>
+          </div>
+
+          <!-- Feature badges list -->
+          <ul class="hero-features-list">
+            <li class="hero-feature-item">
+              <svg class="hero-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Sin servidores (Local-First)</span>
+            </li>
+            <li class="hero-feature-item">
+              <svg class="hero-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Metodología ISO 50001/50006</span>
+            </li>
+            <li class="hero-feature-item">
+              <svg class="hero-feature-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+              <span>Exporta Excel con fórmulas vivas</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right: Interactive SVG Showcase -->
+        <div class="hero-visual">
+          <div class="showcase-card">
+            <div class="showcase-header">
+              <div class="showcase-title-wrap">
+                <span class="showcase-badge">En Vivo</span>
+                <span class="showcase-title">Línea Base vs. Meta de Consumo</span>
+              </div>
+              <div class="showcase-legend">
+                <div class="legend-item"><span class="legend-dot dot-base"></span><span>Línea Base</span></div>
+                <div class="legend-item"><span class="legend-dot dot-meta"></span><span>Línea Meta</span></div>
+                <div class="legend-item"><span class="legend-dot dot-real"></span><span>Real</span></div>
+              </div>
+            </div>
+
+            <!-- Hand-crafted Interactive SVG Chart -->
+            <div class="showcase-svg-wrap">
+              <svg class="showcase-svg" id="interactive-chart" viewBox="0 0 500 300" aria-label="Gráfico de dispersión y líneas de eficiencia">
+                <defs>
+                  <!-- Savings Gradient -->
+                  <linearGradient id="savingsGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#10b981" stop-opacity="0.25"/>
+                    <stop offset="100%" stop-color="#10b981" stop-opacity="0.04"/>
+                  </linearGradient>
+                  <!-- Baseline Glow -->
+                  <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="3" result="glow"/>
+                    <feComposite in="SourceGraphic" in2="glow" operator="over"/>
+                  </filter>
+                </defs>
+
+                <!-- Grid lines -->
+                <line x1="60" y1="40" x2="470" y2="40" stroke="var(--border)" stroke-dasharray="3 3"/>
+                <line x1="60" y1="90" x2="470" y2="90" stroke="var(--border)" stroke-dasharray="3 3"/>
+                <line x1="60" y1="140" x2="470" y2="140" stroke="var(--border)" stroke-dasharray="3 3"/>
+                <line x1="60" y1="190" x2="470" y2="190" stroke="var(--border)" stroke-dasharray="3 3"/>
+                <line x1="60" y1="240" x2="470" y2="240" stroke="var(--border)"/>
+
+                <line x1="60" y1="40" x2="60" y2="240" stroke="var(--border)"/>
+                <line x1="162" y1="40" x2="162" y2="240" stroke="var(--border)" stroke-dasharray="3 3"/>
+                <line x1="265" y1="40" x2="265" y2="240" stroke="var(--border)" stroke-dasharray="3 3"/>
+                <line x1="367" y1="40" x2="367" y2="240" stroke="var(--border)" stroke-dasharray="3 3"/>
+                <line x1="470" y1="40" x2="470" y2="240" stroke="var(--border)" stroke-dasharray="3 3"/>
+
+                <!-- Axis Labels -->
+                <text x="50" y="244" fill="var(--ink-muted)" font-size="11" text-anchor="end">0</text>
+                <text x="50" y="194" fill="var(--ink-muted)" font-size="11" text-anchor="end">50k</text>
+                <text x="50" y="144" fill="var(--ink-muted)" font-size="11" text-anchor="end">100k</text>
+                <text x="50" y="94" fill="var(--ink-muted)" font-size="11" text-anchor="end">150k</text>
+                <text x="50" y="44" fill="var(--ink-muted)" font-size="11" text-anchor="end">200k</text>
+
+                <text x="60" y="262" fill="var(--ink-muted)" font-size="11" text-anchor="middle">0</text>
+                <text x="162" y="262" fill="var(--ink-muted)" font-size="11" text-anchor="middle">5k</text>
+                <text x="265" y="262" fill="var(--ink-muted)" font-size="11" text-anchor="middle">10k</text>
+                <text x="367" y="262" fill="var(--ink-muted)" font-size="11" text-anchor="middle">15k</text>
+                <text x="470" y="262" fill="var(--ink-muted)" font-size="11" text-anchor="middle">20k</text>
+
+                <text x="265" y="285" fill="var(--ink-secondary)" font-size="11" font-weight="600" text-anchor="middle">Producción Mensual (unidades / L / t)</text>
+                <text x="18" y="140" fill="var(--ink-secondary)" font-size="11" font-weight="600" text-anchor="middle" transform="rotate(-90 18 140)">Consumo (kWh)</text>
+
+                <!-- Savings Area Polygon -->
+                <polygon id="savings-zone" points="70,215 460,75 460,110 70,225" fill="url(#savingsGrad)" opacity="1" style="transition: opacity 0.3s;"/>
+
+                <!-- Línea Base: Ê = m*P + E0 (Blue line) -->
+                <line id="line-base" x1="60" y1="218" x2="470" y2="70" stroke="#0284c7" stroke-width="3" stroke-linecap="round"/>
+
+                <!-- Línea Meta (Green dashed line) -->
+                <line id="line-meta" x1="60" y1="228" x2="470" y2="108" stroke="#10b981" stroke-width="2.5" stroke-dasharray="6 4" stroke-linecap="round"/>
+
+                <!-- Monthly Scatter Points (Hoverable with Tooltip) -->
+                <g id="scatter-points">
+                  <circle class="chart-point" data-m="Ene" data-p="6,200" data-e="68,400" data-s="En Meta" cx="187" cy="180" r="5.5" fill="#10b981" stroke="#fff" stroke-width="2"/>
+                  <circle class="chart-point" data-m="Feb" data-p="8,500" data-e="88,900" data-s="Sobre Base" cx="234" cy="158" r="5.5" fill="#f59e0b" stroke="#fff" stroke-width="2"/>
+                  <circle class="chart-point" data-m="Mar" data-p="11,200" data-e="104,200" data-s="Eficiente" cx="290" cy="144" r="5.5" fill="#10b981" stroke="#fff" stroke-width="2"/>
+                  <circle class="chart-point" data-m="Abr" data-p="13,800" data-e="128,500" data-s="En Meta" cx="343" cy="126" r="5.5" fill="#10b981" stroke="#fff" stroke-width="2"/>
+                  <circle class="chart-point" data-m="May" data-p="16,500" data-e="151,000" data-s="Sobre Base" cx="398" cy="108" r="5.5" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+                  <circle class="chart-point" data-m="Jun" data-p="18,400" data-e="148,600" data-s="Eficiente (Ahorro)" cx="437" cy="115" r="6" fill="#10b981" stroke="#fff" stroke-width="2.5"/>
+                </g>
+
+                <!-- Tooltip floating inside SVG -->
+                <g id="chart-tooltip" opacity="0" pointer-events="none" style="transition: opacity 0.2s;">
+                  <rect id="tt-bg" x="0" y="0" width="130" height="52" rx="6" fill="var(--surface)" stroke="var(--border)" filter="drop-shadow(0 4px 10px rgba(0,0,0,0.15))"/>
+                  <text id="tt-title" x="10" y="18" fill="var(--ink)" font-size="11" font-weight="700">Mes: Jun</text>
+                  <text id="tt-sub1" x="10" y="32" fill="var(--ink-secondary)" font-size="10">P: 18,400 · E: 148.6k</text>
+                  <text id="tt-sub2" x="10" y="44" fill="#10b981" font-size="10" font-weight="600">Ahorro: +12.4%</text>
+                </g>
+              </svg>
+            </div>
+
+            <!-- Quick Metrics Grid -->
+            <div class="showcase-metrics">
+              <div class="metric-box">
+                <div class="metric-val">0.892</div>
+                <div class="metric-lbl">Ajuste R² (Fuerte)</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-val" style="color:var(--brand-accent);">-14.2%</div>
+                <div class="metric-lbl">Ahorro Potencial</div>
+              </div>
+              <div class="metric-box">
+                <div class="metric-val" style="color:var(--electric);">12.8 kWh/u</div>
+                <div class="metric-lbl">Índice Ponderado</div>
+              </div>
+            </div>
+
+            <!-- Interactive Diagram Toggles -->
+            <div class="showcase-controls">
+              <button class="showcase-btn active" id="toggle-base" title="Alternar visualización de la Línea Base">Línea Base</button>
+              <button class="showcase-btn active" id="toggle-meta" title="Alternar Línea Meta">Línea Meta</button>
+              <button class="showcase-btn active" id="toggle-savings" title="Alternar Zona de Ahorro">Zona Ahorro</button>
+              <button class="showcase-btn" id="btn-simulate" title="Simular optimización energética">⚡ Simular Ahorro</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem vs Solution Section -->
+    <section class="section" id="que-es" style="background-color: var(--surface-2);">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-badge">El Desafío &amp; La Solución</span>
+          <h2 class="section-title">¿Por qué las empresas necesitan EcoWatt?</h2>
+          <p class="section-subtitle">
+            Medir el desempeño energético sin normalizar por el volumen de producción genera conclusiones engañosas. EcoWatt hace accesible el rigor científico en minutos.
+          </p>
+        </div>
+
+        <div class="comparison-grid">
+          <!-- Traditional Problems -->
+          <div class="comp-card comp-card-bad">
+            <span class="comp-tag comp-tag-bad">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+              Método Tradicional
+            </span>
+            <h3 class="comp-title">Gestión manual y suposiciones</h3>
+            <ul class="comp-list">
+              <li class="comp-item">
+                <svg class="comp-icon comp-icon-bad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="6"/></svg>
+                <span><strong>Sin ajuste por producción:</strong> Un mes con menor factura parece un ahorro, pero en realidad puede ser solo menor actividad productiva.</span>
+              </li>
+              <li class="comp-item">
+                <svg class="comp-icon comp-icon-bad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="6"/></svg>
+                <span><strong>Hojas de cálculo frágiles:</strong> Fórmulas complejas de regresión que se rompen, macros inseguras y pérdida de trazabilidad entre áreas.</span>
+              </li>
+              <li class="comp-item">
+                <svg class="comp-icon comp-icon-bad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="6"/></svg>
+                <span><strong>Riesgo de confidencialidad:</strong> Plataformas en la nube que exigen subir volúmenes de producción y costos a servidores externos de terceros.</span>
+              </li>
+              <li class="comp-item">
+                <svg class="comp-icon comp-icon-bad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="6"/></svg>
+                <span><strong>Auditorías lentas y costosas:</strong> Semanas de consultoría para obtener un diagnóstico que queda desactualizado al mes siguiente.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- The EcoWatt Way -->
+          <div class="comp-card comp-card-good">
+            <span class="comp-tag comp-tag-good">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Con EcoWatt
+            </span>
+            <h3 class="comp-title">Diagnóstico matemático en segundos</h3>
+            <ul class="comp-list">
+              <li class="comp-item">
+                <svg class="comp-icon comp-icon-good" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Modelos ISO 50001 / 50006:</strong> Regresión lineal simple por mínimos cuadrados que separa el consumo base fijo ($E_0$) del variable asociado a producción.</span>
+              </li>
+              <li class="comp-item">
+                <svg class="comp-icon comp-icon-good" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Línea Meta y CUSUM:</strong> Descubre tus meses de mayor eficiencia histórica y proyecta metas realistas de reducción con ahorro acumulado.</span>
+              </li>
+              <li class="comp-item">
+                <svg class="comp-icon comp-icon-good" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>100% Privado en tu máquina:</strong> Tus datos de producción y facturas jamás viajan a internet. Funciona offline en cualquier navegador.</span>
+              </li>
+              <li class="comp-item">
+                <svg class="comp-icon comp-icon-good" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Reportes e Informes Auditables:</strong> Descarga reportes en PDF y archivos Excel con las fórmulas vivas listas para presentar a gerencia o certificadoras.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4-Step Intuitive Workflow -->
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-badge">Paso a Paso</span>
+          <h2 class="section-title">¿Cómo funciona? En 4 pasos simples</h2>
+          <p class="section-subtitle">
+            Sin instalaciones complejas ni capacitación técnica avanzada. Diseñado para analistas, gerentes de planta y líderes de sostenibilidad.
+          </p>
+        </div>
+
+        <div class="workflow-grid">
+          <!-- Step 1 -->
+          <div class="step-card">
+            <span class="step-number">01</span>
+            <div class="step-svg-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+            </div>
+            <h3 class="step-title">Ingresa o Importa tus Datos</h3>
+            <p class="step-desc">
+              Pega tu historial mensual desde Excel o importa un archivo CSV/XLSX. Validación en vivo de meses duplicados o valores atípicos sin eliminarlos arbitrariamente.
+            </p>
+            <span class="step-pill">Copia y pega directo · XLSX / CSV</span>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card">
+            <span class="step-number">02</span>
+            <div class="step-svg-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+                <path d="m4 12 6-4 6 4 4-6"/>
+              </svg>
+            </div>
+            <h3 class="step-title">Genera la Línea Base</h3>
+            <p class="step-desc">
+              EcoWatt ajusta automáticamente la regresión Ê = m·P + E₀ por mínimos cuadrados, calculando R², p-values estadísticos, error típico y consumo independiente.
+            </p>
+            <span class="step-pill">Estadística ISO 50001 · R² e IC</span>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card">
+            <span class="step-number">03</span>
+            <div class="step-svg-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m4.93 4.93 4.24 4.24"/>
+                <path d="m14.83 9.17 4.24-4.24"/>
+                <path d="m14.83 14.83 4.24 4.24"/>
+                <path d="m9.17 14.83-4.24 4.24"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </div>
+            <h3 class="step-title">Fija Metas e Indicadores</h3>
+            <p class="step-desc">
+              El algoritmo aísla los meses de mayor eficiencia para trazar la Línea Meta y calcula Indicadores Base 100 y la curva CUSUM de ahorro acumulado.
+            </p>
+            <span class="step-pill">Línea Meta · Indicador Base 100</span>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card">
+            <span class="step-number">04</span>
+            <div class="step-svg-wrap">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
+                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
+                <path d="M4 22h16"/>
+                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
+                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
+                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
+              </svg>
+            </div>
+            <h3 class="step-title">Compara y Exporta</h3>
+            <p class="step-desc">
+              Visualiza el tablero comparativo entre plantas o sedes por zonas de cumplimiento (verde, amarilla, roja), huella de CO₂ y descarga tu informe oficial en PDF o Excel.
+            </p>
+            <span class="step-pill">Benchmarking · PDF &amp; Excel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Modules -->
+    <section class="section" id="modulos" style="background-color: var(--surface-2);">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-badge">Capacidades Analíticas</span>
+          <h2 class="section-title">Módulos Especializados</h2>
+          <p class="section-subtitle">
+            Todo lo que requiere un sistema integral de gestión de energía empresarial, organizado en herramientas intuitivas y claras.
+          </p>
+        </div>
+
+        <div class="modules-grid">
+          <!-- Module 1 -->
+          <div class="module-card">
+            <div class="module-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"/>
+                <path d="m19 9-5 5-4-4-3 3"/>
+              </svg>
+            </div>
+            <h3 class="module-title">Línea Base y Diagnóstico</h3>
+            <p class="module-desc">
+              Identifica la ecuación matemática fundamental de tu instalación. Separa consumos basales (climatización, standby) de los directamente productivos con intervalos de confianza del 95%.
+            </p>
+            <ul class="module-features">
+              <li class="module-feature-item">✓ Coeficientes con p-value bilateral</li>
+              <li class="module-feature-item">✓ Residuos de Cook y Durbin-Watson</li>
+              <li class="module-feature-item">✓ Detección de meses atípicos</li>
+            </ul>
+          </div>
+
+          <!-- Module 2 -->
+          <div class="module-card">
+            <div class="module-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="5" width="20" height="14" rx="2"/>
+                <line x1="2" y1="10" x2="22" y2="10"/>
+              </svg>
+            </div>
+            <h3 class="module-title">Seguimiento Presupuestal</h3>
+            <p class="module-desc">
+              Compara el consumo real frente al presupuesto financiero, recalculando la expectativa presupuestal según las variaciones reales de producción experimentadas.
+            </p>
+            <ul class="module-features">
+              <li class="module-feature-item">✓ Ajuste presupuestal por producción real</li>
+              <li class="module-feature-item">✓ Desviación acumulada mes a mes</li>
+              <li class="module-feature-item">✓ Gráficas de barras comparativas</li>
+            </ul>
+          </div>
+
+          <!-- Module 3 -->
+          <div class="module-card">
+            <div class="module-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a10 10 0 0 0-7.07 17.07A9.97 9.97 0 0 0 12 22a10 10 0 0 0 7.07-2.93A10 10 0 0 0 12 2Z"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3 class="module-title">Huella de Carbono y Ecológica</h3>
+            <p class="module-desc">
+              Convierte el consumo energético en toneladas métricas de CO₂ equivalente y hectáreas globales de biocapacidad requeridas, utilizando factores oficiales editables.
+            </p>
+            <ul class="module-features">
+              <li class="module-feature-item">✓ Factor de emisión de red eléctrica</li>
+              <li class="module-feature-item">✓ Huella ecológica en hectáreas globales</li>
+              <li class="module-feature-item">✓ Estimación de mitigación por ahorro</li>
+            </ul>
+          </div>
+
+          <!-- Module 4 -->
+          <div class="module-card">
+            <div class="module-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+            <h3 class="module-title">Tablero y Rankings Corporativos</h3>
+            <p class="module-desc">
+              Monitorea múltiples empresas o divisiones en una vista centralizada. Clasificación inmediata por semáforo de metas (zona verde, amarilla, roja) y ranking de eficiencia.
+            </p>
+            <ul class="module-features">
+              <li class="module-feature-item">✓ Tacómetro de cumplimiento por empresa</li>
+              <li class="module-feature-item">✓ Ranking por ahorro y factor de emisión</li>
+              <li class="module-feature-item">✓ Ideal para clusters y gremios</li>
+            </ul>
+          </div>
+
+          <!-- Module 5 -->
+          <div class="module-card">
+            <div class="module-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </div>
+            <h3 class="module-title">Exportación Transparente</h3>
+            <p class="module-desc">
+              Cero cajas negras. Genera informes técnicos imprimibles a PDF y hojas de cálculo Excel (.xlsx) con fórmulas nativas reproducibles para auditorías externas.
+            </p>
+            <ul class="module-features">
+              <li class="module-feature-item">✓ Informes técnicos con resumen ejecutivo</li>
+              <li class="module-feature-item">✓ Excel con fórmulas de verificación</li>
+              <li class="module-feature-item">✓ Guardado de proyecto en formato JSON</li>
+            </ul>
+          </div>
+
+          <!-- Module 6 -->
+          <div class="module-card">
+            <div class="module-icon-wrap">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3 class="module-title">Rigor Estadístico ISO 50001</h3>
+            <p class="module-desc">
+              Construido alineado a las directrices de ISO 50001 y 50006 para la determinación de Líneas Base Energéticas (LBE) e Indicadores de Desempeño Energético (IDEn).
+            </p>
+            <ul class="module-features">
+              <li class="module-feature-item">✓ Pruebas de hipótesis con t de Student</li>
+              <li class="module-feature-item">✓ Indicadores base 100 ponderados</li>
+              <li class="module-feature-item">✓ Análisis CUSUM para seguimiento continuo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Local-First Privacy Section -->
+    <section class="section" id="privacidad">
+      <div class="container">
+        <div class="local-banner">
+          <div class="local-content">
+            <span class="section-badge" style="background:var(--electric-subtle);color:var(--electric);border-color:color-mix(in srgb, var(--electric) 25%, transparent)">
+              Arquitectura Local-First
+            </span>
+            <h3>Tus datos nunca salen de tu dispositivo</h3>
+            <p>
+              En la industria, los datos de producción y consumo son secreto comercial crítico. EcoWatt corre <strong>100% en la memoria de tu navegador</strong>. No hay servidores intermediarios, no hay bases de datos en la nube y no enviamos analítica invasiva.
+            </p>
+            <div class="privacy-pills">
+              <span class="privacy-pill">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                0 Peticiones de datos al exterior
+              </span>
+              <span class="privacy-pill">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                Funciona sin conexión a internet
+              </span>
+              <span class="privacy-pill">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                Cálculos instantáneos en milisegundos
+              </span>
+            </div>
+          </div>
+
+          <div class="local-svg-container">
+            <svg width="220" height="180" viewBox="0 0 220 180" fill="none" aria-hidden="true">
+              <!-- Laptop / Browser Frame -->
+              <rect x="25" y="20" width="170" height="115" rx="10" fill="var(--surface)" stroke="var(--border)" stroke-width="2"/>
+              <rect x="25" y="20" width="170" height="24" rx="10" fill="var(--surface-2)" stroke="var(--border)" stroke-width="2"/>
+              <circle cx="42" cy="32" r="3.5" fill="#ef4444"/>
+              <circle cx="53" cy="32" r="3.5" fill="#f59e0b"/>
+              <circle cx="64" cy="32" r="3.5" fill="#10b981"/>
+              <!-- Base of laptop -->
+              <path d="M10 142h200a8 8 0 0 1-8 8H18a8 8 0 0 1-8-8z" fill="var(--surface-2)" stroke="var(--border)" stroke-width="2"/>
+              <!-- Shield inside screen -->
+              <path d="M110 52 82 66v28c0 22 28 36 28 36s28-14 28-36V66l-28-14z" fill="var(--brand-subtle)" stroke="var(--brand)" stroke-width="2"/>
+              <!-- Lock icon inside shield -->
+              <rect x="102" y="82" width="16" height="12" rx="2" fill="var(--brand)"/>
+              <path d="M105 82v-4a5 5 0 0 1 10 0v4" stroke="var(--brand)" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1-Click Interactive Demos -->
+    <section class="section" id="demos" style="background-color: var(--surface-2);">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-badge">Pruébalo Ahora</span>
+          <h2 class="section-title">Demostraciones en 1 Clic</h2>
+          <p class="section-subtitle">
+            Explora la plataforma precargada con datos realistas simulados para evaluar la potencia analítica al instante.
+          </p>
+        </div>
+
+        <div class="demos-grid">
+          <!-- Demo 1 -->
+          <div class="demo-card">
+            <span class="demo-badge demo-badge-1">Caso Presupuestal</span>
+            <h3 class="demo-title">24 Meses con Presupuesto</h3>
+            <p class="demo-desc">
+              Analiza una industria con 2 años de registros mensuales de consumo, producción y metas presupuestarias. Observa el ajuste presupuestal en vivo.
+            </p>
+            <div class="demo-specs">
+              <span class="demo-spec-item">📅 24 Meses</span>
+              <span class="demo-spec-item">💰 Presupuesto</span>
+              <span class="demo-spec-item">📈 Indicador 100</span>
+            </div>
+            <a href="index.html?demo=24&paso=3" class="btn btn-secondary" style="width:100%">
+              <span>Cargar Demostración</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+
+          <!-- Demo 2 -->
+          <div class="demo-card">
+            <span class="demo-badge demo-badge-2">Caso Eficiencia</span>
+            <h3 class="demo-title">36 Meses: Base y Seguimiento</h3>
+            <p class="demo-desc">
+              24 meses de línea base histórica comparados contra 12 meses de seguimiento post-intervención tecnológica para cuantificar el ahorro demostrado real.
+            </p>
+            <div class="demo-specs">
+              <span class="demo-spec-item">📅 36 Meses</span>
+              <span class="demo-spec-item">🌱 Ahorro Medido</span>
+              <span class="demo-spec-item">📉 CUSUM</span>
+            </div>
+            <a href="index.html?demo=36&paso=3" class="btn btn-secondary" style="width:100%">
+              <span>Cargar Demostración</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+
+          <!-- Demo 3 -->
+          <div class="demo-card">
+            <span class="demo-badge demo-badge-3">Caso Corporativo</span>
+            <h3 class="demo-title">Tablero Multiempresa (4 Sedes)</h3>
+            <p class="demo-desc">
+              Compara 4 empresas simultáneas en el tablero ejecutivo: semáforo de metas, zonas verde/amarilla/roja y ranking de desempeño ecológico.
+            </p>
+            <div class="demo-specs">
+              <span class="demo-spec-item">🏢 4 Empresas</span>
+              <span class="demo-spec-item">🏆 Ranking</span>
+              <span class="demo-spec-item">🚦 Semáforo</span>
+            </div>
+            <a href="index.html?demo=multi&paso=5" class="btn btn-secondary" style="width:100%">
+              <span>Ver Tablero Comparativo</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ & Methodology Accordion -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-badge">Preguntas Frecuentes</span>
+          <h2 class="section-title">Metodología y Dudas Comunes</h2>
+          <p class="section-subtitle">
+            Respuestas directas sobre la matemática, los estándares y el funcionamiento de la herramienta.
+          </p>
+        </div>
+
+        <div class="faq-container">
+          <details class="faq-item" open>
+            <summary class="faq-question">
+              <span>¿Qué es exactamente una Línea Base Energética (LBE)?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Según la norma <strong>ISO 50006</strong>, una Línea Base Energética es una referencia cuantitativa que describe el consumo de energía en un periodo específico en función de variables relevantes (como el volumen de producción). En EcoWatt, se modela mediante la ecuación lineal <code>Ê = m·P + E₀</code>, donde <code>m</code> representa la energía marginal por unidad producida y <code>E₀</code> representa la energía fija que la planta consume independientemente de si produce o no (iluminación base, climatización, pérdidas fijas).
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>¿Por qué el Indicador Base 100 se ajusta por la producción?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Si comparas el consumo bruto de dos meses con producciones distintas, el resultado no refleja eficiencia sino volumen. Nuestro indicador base 100 evalúa <code>IEB100 = Ê(P) / E × 100</code>, donde <code>Ê(P)</code> es el consumo teórico que la planta debió haber tenido para el nivel exacto de producción <code>P</code> alcanzado en ese mes. Un valor <strong>≥ 100 indica un desempeño favorable</strong> (consumiste igual o menos de lo esperado).
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>¿Qué factores de huella de carbono y ecológica utiliza EcoWatt?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                Por defecto, EcoWatt incorpora el factor de emisión de la red del sistema eléctrico interconectado nacional de Colombia (ajustable en la pestaña de configuración) y un factor de absorción de biocapacidad para estimar la huella ecológica en hectáreas globales (hag). Ambos factores son 100% editables para ajustarse al energeticó específico de tu empresa (electricidad, gas natural, diésel, biomasa).
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>¿Qué ocurre si borro los datos de mi navegador?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                EcoWatt utiliza <code>localStorage</code> para que no pierdas tu avance si refrescas la pestaña. Sin embargo, para mayor seguridad, la plataforma incluye botones de <strong>«Guardar Proyecto (.json)»</strong> y <strong>«Exportar Excel»</strong> para descargar una copia física en tu computadora que puedes respaldar o compartir con tu equipo en cualquier momento.
+              </p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">
+              <span>¿EcoWatt certifica a mi empresa en la norma ISO 50001?</span>
+              <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </summary>
+            <div class="faq-answer">
+              <p>
+                No. EcoWatt es una herramienta técnica de soporte, cálculo y diagnóstico que aplica con rigor las fórmulas de ISO 50001 y 50006. La certificación formal requiere una auditoría oficial por parte de un organismo acreditado; sin embargo, EcoWatt genera toda la evidencia matemática y documental que un auditor solicita.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="section cta-section">
+      <div class="container">
+        <div class="cta-banner">
+          <h2 class="cta-title">Comienza a Optimizar tu Consumo Energético</h2>
+          <p class="cta-subtitle">
+            Únete a la transición energética empresarial. Obtén tu línea base, identifica sobrecostos y reduce tu huella ambiental hoy mismo.
+          </p>
+          <div class="cta-buttons">
+            <a href="index.html" class="btn btn-cta-primary btn-lg" id="final-cta">
+              <span>Abrir Plataforma Ahora</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="index.html?demo=multi&paso=5" class="btn btn-cta-secondary btn-lg">
+              <span>Ver Tablero Comparativo</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="#top" class="brand-link">
+            <div class="brand-logo-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2 4.5 13.5h6L9.5 22 20 10.5h-6z" fill="currentColor" fill-opacity="0.2"/>
+                <path d="M13 2 4.5 13.5h6L9.5 22 20 10.5h-6z" />
+              </svg>
+            </div>
+            <div class="brand-info">
+              <div class="brand-title">EcoWatt</div>
+              <span class="brand-tagline">Gestión &amp; Desempeño Energético</span>
+            </div>
+          </a>
+          <p class="footer-brand-desc">
+            Plataforma local-first de caracterización energética, línea base, línea meta y huella ambiental para empresas.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Plataforma</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Diagnóstico Empresa</a></li>
+            <li><a href="index.html?demo=24&paso=3">Demo 24 Meses</a></li>
+            <li><a href="index.html?demo=36&paso=3">Demo Seguimiento</a></li>
+            <li><a href="index.html?demo=multi&paso=5">Tablero Comparativo</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Documentación</h4>
+          <ul class="footer-links">
+            <li><a href="docs/METODOLOGIA.md">Fórmulas y Metodología</a></li>
+            <li><a href="docs/VALIDACION.md">Validación y Pruebas</a></li>
+            <li><a href="README.md">Guía de Uso</a></li>
+            <li><a href="https://github.com/Josejjf123/ecowatt" target="_blank" rel="noopener">Repositorio GitHub</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Hackathon</h4>
+          <ul class="footer-links">
+            <li><strong>EcoFest Barranquilla 2026</strong></li>
+            <li>EcoHackathon · CCB</li>
+            <li>Jose Mauricio Lopez Robles</li>
+            <li>Daniel Granados</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-credits">
+          © 2026 EcoWatt · Desarrollado para el reto propuesto por la Cámara de Comercio de Barranquilla en EcoFest 2026.
+        </p>
+        <p class="footer-credits">
+          <a href="#top" style="color:var(--brand);font-weight:600;">↑ Volver arriba</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript for Landing Page -->
+  <script>
+    (function() {
+      'use strict';
+      
+      // Theme Toggle Sync with EcoWatt App
+      const THEME_KEY = 'gestion-energetica:tema';
+      const root = document.documentElement;
+      const themeBtn = document.getElementById('theme-toggle');
+      const sunIcon = themeBtn.querySelector('.sun-icon');
+      const moonIcon = themeBtn.querySelector('.moon-icon');
+
+      function applyTheme(theme) {
+        if (theme === 'dark') {
+          root.setAttribute('data-theme', 'dark');
+          sunIcon.style.display = 'block';
+          moonIcon.style.display = 'none';
+        } else {
+          root.setAttribute('data-theme', 'light');
+          sunIcon.style.display = 'none';
+          moonIcon.style.display = 'block';
+        }
+      }
+
+      // Check current theme
+      let currentTheme = localStorage.getItem(THEME_KEY);
+      if (!currentTheme) {
+        currentTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      applyTheme(currentTheme);
+
+      themeBtn.addEventListener('click', () => {
+        const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(nextTheme);
+        try { localStorage.setItem(THEME_KEY, nextTheme); } catch (e) {}
+      });
+
+      // Mobile Navigation Menu Toggle
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      
+      mobileToggle.addEventListener('click', () => {
+        const isOpen = navMenu.classList.toggle('is-open');
+        mobileToggle.setAttribute('aria-expanded', isOpen);
+      });
+
+      // Close mobile menu when clicking a link
+      navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navMenu.classList.remove('is-open');
+          mobileToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+
+      // Interactive SVG Chart Elements
+      const lineBase = document.getElementById('line-base');
+      const lineMeta = document.getElementById('line-meta');
+      const savingsZone = document.getElementById('savings-zone');
+      const toggleBase = document.getElementById('toggle-base');
+      const toggleMeta = document.getElementById('toggle-meta');
+      const toggleSavings = document.getElementById('toggle-savings');
+      const btnSimulate = document.getElementById('btn-simulate');
+      const points = document.querySelectorAll('.chart-point');
+      const tooltip = document.getElementById('chart-tooltip');
+      const ttTitle = document.getElementById('tt-title');
+      const ttSub1 = document.getElementById('tt-sub1');
+      const ttSub2 = document.getElementById('tt-sub2');
+
+      // Toggles
+      toggleBase.addEventListener('click', () => {
+        const isHidden = lineBase.getAttribute('opacity') === '0';
+        lineBase.setAttribute('opacity', isHidden ? '1' : '0');
+        toggleBase.classList.toggle('active', isHidden);
+      });
+
+      toggleMeta.addEventListener('click', () => {
+        const isHidden = lineMeta.getAttribute('opacity') === '0';
+        lineMeta.setAttribute('opacity', isHidden ? '1' : '0');
+        toggleMeta.classList.toggle('active', isHidden);
+      });
+
+      toggleSavings.addEventListener('click', () => {
+        const isHidden = savingsZone.getAttribute('opacity') === '0';
+        savingsZone.setAttribute('opacity', isHidden ? '1' : '0');
+        toggleSavings.classList.toggle('active', isHidden);
+      });
+
+      // Hover Tooltip on Points
+      points.forEach(pt => {
+        pt.addEventListener('mouseenter', (e) => {
+          const cx = parseFloat(pt.getAttribute('cx'));
+          const cy = parseFloat(pt.getAttribute('cy'));
+          const m = pt.dataset.m;
+          const p = pt.dataset.p;
+          const energy = pt.dataset.e;
+          const s = pt.dataset.s;
+
+          ttTitle.textContent = `Mes: ${m} · Estado: ${s}`;
+          ttSub1.textContent = `Producción: ${p} u`;
+          ttSub2.textContent = `Consumo: ${energy} kWh`;
+
+          // Position tooltip safely
+          const ttX = cx > 300 ? cx - 140 : cx + 12;
+          const ttY = cy > 180 ? cy - 60 : cy - 20;
+
+          tooltip.setAttribute('transform', `translate(${ttX}, ${ttY})`);
+          tooltip.setAttribute('opacity', '1');
+          pt.setAttribute('r', '8');
+        });
+
+        pt.addEventListener('mouseleave', () => {
+          tooltip.setAttribute('opacity', '0');
+          pt.setAttribute('r', pt.dataset.m === 'Jun' ? '6' : '5.5');
+        });
+      });
+
+      // Simulation Animation
+      let simulated = false;
+      btnSimulate.addEventListener('click', () => {
+        simulated = !simulated;
+        btnSimulate.classList.toggle('active', simulated);
+        btnSimulate.innerHTML = simulated ? '↩ Restaurar Datos' : '⚡ Simular Ahorro';
+        
+        points.forEach((pt, i) => {
+          const originalCy = [180, 158, 144, 126, 108, 115][i];
+          const targetCy = [188, 172, 154, 138, 122, 115][i];
+          const newCy = simulated ? targetCy : originalCy;
+          
+          pt.style.transition = 'cy 0.8s cubic-bezier(0.34, 1.56, 0.64, 1)';
+          pt.setAttribute('cy', newCy);
+          if (simulated) {
+            pt.setAttribute('fill', '#10b981');
+          } else {
+            const defaultFills = ['#10b981', '#f59e0b', '#10b981', '#10b981', '#ef4444', '#10b981'];
+            pt.setAttribute('fill', defaultFills[i]);
+          }
+        });
+      });
+
+    })();
+  </script>
+</body>
+
+</html>
